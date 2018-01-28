@@ -1,0 +1,52 @@
+-crear un nodo mode private test
+-geth
+-arhivo genesis.json
+
+
+en el datadir es donde se almacena los bloques de tu nodo
+
+toriox creacion :
+geth --identity "torioux" datadir="chairdata" init genesis.json 
+geth --datadir "chairdata"  --rpc
+geth --identity "torioux" --datadir="chairdata"  --rpcport "8545" --rpccorsdomain="localhost:8545" --rpc
+
+
+minar :
+para minar en la consola 
+se requiere que esten todos los modules : modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+lo que importa el miner pero hasta ahora solo usaba el miner con ipc ya que con rpc no obtenia el modulo
+
+
+ejecutar el geth  attach despues de iniciar su nodo
+
+el codigo en consola es miner.start()
+***  ejemplo************* IPC 
+
+C:\Users\Usuario\Desktop\CAso de uso>geth attach \\.\pipe\geth.ipc
+Welcome to the Geth JavaScript console!
+
+instance: Geth/torioux/v1.7.2-stable-1db4ecdc/windows-amd64/go1.9
+coinbase: 0x89009ec75373839b2f99c8105d991eba8dfd4047
+at block: 1124 (Sat, 27 Jan 2018 19:03:09 -05)
+ datadir: C:\Users\Usuario\Desktop\Nodo Torioux\chairdata
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+
+******************************
+
+
+***ejemplo ************ RPC
+
+C:\Users\Usuario\Desktop\CAso de uso>geth attach http://127.0.0.1:8545
+Welcome to the Geth JavaScript console!
+
+instance: Geth/torioux/v1.7.2-stable-1db4ecdc/windows-amd64/go1.9
+coinbase: 0x89009ec75373839b2f99c8105d991eba8dfd4047
+at block: 1124 (Sat, 27 Jan 2018 19:03:09 -05)
+ modules: eth:1.0 net:1.0 rpc:1.0 web3:1.0
+
+>miner.start()
+***********************
+
+
+nodo 1 :
+geth --datadir="C:\Users\Usuario\AppData\Local\Temp\ethereum_dev_mode"  --ipcdisable  --rpc
