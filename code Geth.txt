@@ -1,3 +1,15 @@
+console geth 
+/////////////*************
+
+--ipcdisable   desabilita el ipc
+--rpc          habilita el rpc
+
+
+
+
+***********////////////////
+
+
 -crear un nodo mode private test
 -geth
 -arhivo genesis.json
@@ -50,3 +62,14 @@ at block: 1124 (Sat, 27 Jan 2018 19:03:09 -05)
 
 nodo 1 :
 geth --datadir="C:\Users\Usuario\AppData\Local\Temp\ethereum_dev_mode"  --ipcdisable  --rpc
+
+
+
+
+
+
+
+
+
+Rinkeby :
+geth --rinkeby --rpc --rpcapi db,eth,net,web3,personal
